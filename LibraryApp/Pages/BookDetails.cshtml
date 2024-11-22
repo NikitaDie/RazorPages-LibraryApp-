@@ -1,0 +1,14 @@
+﻿@page "/book/{id}"
+@model LibraryApp.Pages.BookDetails
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<h1>@Model.Book.Title</h1>
+
+<p><strong>Author:</strong> @Model.Book.Author</p>
+<p><strong>Genre:</strong> @Model.Book.Genre</p>
+<p><strong>Publisher:</strong> @Model.Book.Publisher</p>
+<p><strong>Year:</strong> @Model.Book.Year</p>
+
+<a href="/books" class="btn btn-primary">Back to list</a>

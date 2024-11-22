@@ -1,0 +1,27 @@
+﻿@page "/books"
+@model LibraryApp.Pages.BooksModel
+@{
+    ViewData["Title"] = "Library - Books";
+}
+
+<h1>Library Books</h1>
+
+<a href="/AddBook" class="btn btn-primary mb-3">Add New Book</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Page("/BookDetails", new { id = book.Id })">@book.Title</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
